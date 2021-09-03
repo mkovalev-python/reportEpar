@@ -1,5 +1,7 @@
 from django.urls import path, include
 
+from report.views import Report
+
 urlpatterns = [
-    path('', include('report.urls'))
+    path('', Report.as_view())
 ]
