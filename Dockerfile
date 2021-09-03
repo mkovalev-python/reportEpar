@@ -1,6 +1,6 @@
 FROM python:3.7
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/report
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -13,7 +13,8 @@ COPY ./entrypoint.sh .
 RUN sed -i 's/\r//' ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
 
+EXPOSE 4000
 
 COPY . .
 
-ENTRYPOINT ["sh","/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["sh","/usr/src/report/entrypoint.sh"]
